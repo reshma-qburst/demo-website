@@ -1,0 +1,12 @@
+body {font-family: Verdana, sans-serif; font-size: 0.8em;}
+header,section,article,footer {
+	border: 1px solid grey; margin: 5px; padding: 8px;
+}
+header,footer {
+	color: white;
+	background-color: #444;
+	margin-bottom: 5px;
+}
+nav ul {margin: 0; padding: 0;}
+nav ul li {display: inline; margin: 5px;}
+bdi {color: green;}
