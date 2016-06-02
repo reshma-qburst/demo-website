@@ -1,74 +1,74 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-	<title>Demo Page</title>
-	<meta charset="utf-8" />
-	 <!--[if lt IE 9]>
-  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  	<![endif]-->
-  	<link rel="stylesheet" href="assets/css/normalize.css">
-	<link rel="stylesheet" href="assets/css/styles.css">
-	<script src="assets/js/script.js"></script>
-</head>
-<body id="contact">
-	<header>
-		<h1 align="center">Landscapes</h1>
-	</header>
-	<nav>
-		<ul class="tabs">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="gallery.html">Gallery</a></li>
-			<li><a href="contact.html">Contact Us</a></li>
-		</ul>
-	</nav>
-	<main>
-		<section id="content3">
-				<h2>Registration Form</h2>
-				<p>
-					Below is the <mark>form</mark> for <bdi><i>registration</i></bdi>
-				</p>
-				<div>
-					<form method="post" action="success.html" class="contactForm">
-						<div>
-							<label>First Name:</label>
-							<input type="text" name="firstname" placeholder="Please enter first name" pattern="^[a-zA-Z]+$" required autofocus>
-						</div>
-						<div>
-							<label>Last Name:</label>
-							<input type="text" name="lastname" placeholder="Please enter last name" pattern="^[a-zA-Z]+$" required autofocus>
-						</div>
-						<div>
-							<label>Email:</label>
-							<input type="text" name="email" placeholder="example@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required autofocus>
-						</div>
-						<div>
-							<label>Select Gender:</label>
-							<input type="radio" name="gender" value="Male" checked="">Male
-							<input type="radio" name="gender" value="Female">Female
-							<input type="radio" name="gender" value="Other">Other
-						</div>
-						 <div>
-						 	<label>Landscaping required?</label>
-						 	<select name="continue" required>
-								<option value="">Select</option>
-								<option value="yes">Yes</option>
-								<option value="no">No</option>
-							</select>
-						 </div>
-						 <div>
-						 	<label>Any Queries?</label>
-						 	<textarea name="message" rows="10" cols="30" required autofocus></textarea>
-						 </div>
-						 <div>
-						 	<input type="submit" name="Submit" class="submit">
-						 </div>
-					</form>
-				</div>
-		</section>
-	</main>
-	<footer>
-		<p>&copy;All rights reserved</p>
-		<p>For further information, contact:<a href="mailto:example@domain.com">example@domain.com</a>.</p>
-	</footer>
-</body>
+	<head>
+		<title>Demo Page</title>
+		<meta charset="utf-8" />
+		 <!--[if lt IE 9]>
+	  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	  	<![endif]-->
+	  	<link rel="stylesheet" href="assets/css/normalize.css">
+		<link rel="stylesheet" href="assets/css/styles.css">
+		<script src="assets/js/script.js"></script>
+	</head>
+	<body id="contact">
+		<header>
+			<h1 align="center">Landscapes</h1>
+		</header>
+		<nav>
+			<ul class="tabs">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</nav>
+		<main>
+			<section id="content3">
+					<h2>Registration Form</h2>
+					<p>
+						Below is the <mark>form</mark> for <bdi><i>registration</i></bdi>
+					</p>
+					<div>
+						<form method="post" action="success.html" class="contactForm">
+							<div>
+								<label for="firstname">First Name:</label>
+								<input type="text" name="firstname" placeholder="Please enter first name" pattern="^[a-zA-Z]+$" required autofocus>
+							</div>
+							<div>
+								<label for="lastname">Last Name:</label>
+								<input type="text" name="lastname" placeholder="Please enter last name" pattern="^[a-zA-Z]+$" required autofocus>
+							</div>
+							<div>
+								<label for="email">Email:</label>
+								<input type="text" name="email" placeholder="example@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required autofocus>
+							</div>
+							<div>
+								<label for="gender">Select Gender:</label>
+								<input type="radio" name="gender" value="Male" checked="">Male
+								<input type="radio" name="gender" value="Female">Female
+								<input type="radio" name="gender" value="Other">Other
+							</div>
+							 <div>
+							 	<label for="continue">Landscaping required?</label>
+							 	<select name="continue" required>
+									<option value="">Select</option>
+									<option value="yes">Yes</option>
+									<option value="no">No</option>
+								</select>
+							 </div>
+							 <div>
+							 	<label for="message">Any Queries?</label>
+							 	<textarea name="message" rows="10" cols="30" required autofocus></textarea>
+							 </div>
+							 <div>
+							 	<input type="submit" name="Submit" class="submit">
+							 </div>
+						</form>
+					</div>
+			</section>
+		</main>
+		<footer>
+			<p>&copy;All rights reserved</p>
+			<p>For further information, contact:<a href="mailto:example@domain.com">example@domain.com</a>.</p>
+		</footer>
+	</body>
 </html>
