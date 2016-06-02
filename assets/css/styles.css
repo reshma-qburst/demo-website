@@ -25,7 +25,7 @@ nav ul.tabs li a {
 nav ul.tabs li a:visited {color: #000;}
 nav ul.tabs li a:hover {
     border: 1px solid #B7B7B7;
-    background:#F0F0F0 url(tabbg.gif) 0 -36px repeat-x;
+    background:#F0F0F0 url(../images/tabbg.gif) 0 -36px repeat-x;
 }
 nav ul.tabs li.selected a:hover {text-decoration: none;}
 .tabcontents {background-color:#FFF; border-radius: 0 3px 3px 3px;}
@@ -76,5 +76,4 @@ footer {
     -moz-box-shadow: 0 0 10px 5px #356b0b inset;
     -ms-box-shadow: 0 0 10px 5px #356b0b inset;
     -o-box-shadow: 0 0 10px 5px #356b0b inset;
-     
 }
