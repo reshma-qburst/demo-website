@@ -30,15 +30,15 @@
 					<div>
 						<form method="post" action="success.html" class="contactForm">
 							<div>
-								<label for="firstname">First Name:</label>
+								<label for="firstname" class="requiredField">First Name:</label>
 								<input type="text" name="firstname" placeholder="Please enter first name" pattern="^[a-zA-Z]+$" required autofocus>
 							</div>
 							<div>
-								<label for="lastname">Last Name:</label>
+								<label for="lastname" class="requiredField">Last Name:</label>
 								<input type="text" name="lastname" placeholder="Please enter last name" pattern="^[a-zA-Z]+$" required autofocus>
 							</div>
 							<div>
-								<label for="email">Email:</label>
+								<label for="email" class="requiredField">Email:</label>
 								<input type="text" name="email" placeholder="example@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required autofocus>
 							</div>
 							<div>
@@ -48,7 +48,7 @@
 								<input type="radio" name="gender" value="Other">Other
 							</div>
 							 <div>
-							 	<label for="continue">Landscaping required?</label>
+							 	<label for="continue" class="requiredField">Landscaping required?</label>
 							 	<select name="continue" required>
 									<option value="">Select</option>
 									<option value="yes">Yes</option>
@@ -56,10 +56,10 @@
 								</select>
 							 </div>
 							 <div>
-							 	<label for="message">Any Queries?</label>
+							 	<label for="message" class="requiredField">Any Queries?</label>
 							 	<textarea name="message" rows="10" cols="30" required autofocus></textarea>
 							 </div>
-							 <div>
+							 <div align="right" class="submitDiv">
 							 	<input type="submit" name="Submit" class="submit">
 							 </div>
 						</form>

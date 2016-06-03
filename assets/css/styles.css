@@ -4,11 +4,19 @@
 body {
 	font-family: Verdana,sans-serif;
 	font-size: 0.8em;
+	background-image: url(../images/middle-bg.jpg);
+	display: block;
+	max-width: 100%;
 }
-header, section, footer {
+header, footer {
 	border: 1px solid grey;
 	margin: 5px;
 	padding: 8px;
+}
+section {
+	border: 1px solid grey;
+	padding: 10px;
+	margin-top: 5px;
 }
 header, footer {
 	color: #fff;
@@ -49,7 +57,6 @@ nav ul.tabs li.selected a:hover {
 	text-decoration: none;
 }
 .tabcontents {
-	background-color:#fff;
 	border-radius: 0 3px 3px 3px;
 }
 footer {
@@ -64,7 +71,7 @@ footer {
 	width: 50%;
 }
 .contactForm div {
-	padding-bottom: 5px;
+	padding-bottom: 10px;
 }
 /* Button Style */
 .contactForm input.submit {
@@ -105,17 +112,18 @@ footer {
     -ms-box-shadow: 0 0 10px 5px #356b0b inset;
     -o-box-shadow: 0 0 10px 5px #356b0b inset;
 }
+.contactForm .submitDiv {
+	padding-right: 192px;
+}
 .contactForm input:focus, textarea:focus {
 	border: 2px solid red;
 }
 #content3 {
 	background-color: #ffffb2;
 	position: fixed;
-  	left: 0;
-  	right: 0;
   	z-index: 9999;
-  	margin-left: 15px;
-  	margin-right: 15px;
+  	//margin-left: 315px;
+  	width: 555px;
 }
 #contact:before {
  	content: "";
@@ -141,13 +149,31 @@ footer {
 #content1 {
 	background-image: url(../images/bg-home.jpg);
 	width: auto;
-	height: 800px;
+	height: 700px;
+	background-size: cover;
 }
-#content1 article {
+#content1 article, #gallery main article h2{
 	color: #fff;
 	font-weight: bold;
 }
 article, footer, .tabcontents h3 {
 	text-align:center;
 	text-align: -moz-center;
+}
+.requiredField:after {
+    content: " *";
+    color: #FF0000;
+    font-size: 10px;
+    position: absolute;
+    margin-left: 6px;
+    margin-top: 5px;
+    line-height: 100%;
+}
+#contact main {
+    width: 660px;
+    padding: 20px 50px 20px 50px;
+    margin: 20px auto;
+    min-height: 500px;
+    height: auto !important;
+    height: 500px;
 }
