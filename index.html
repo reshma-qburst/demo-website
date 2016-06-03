@@ -1,67 +1,37 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-	<title>Demo Page</title>
-	<meta charset="utf-8" />
-	 <!--[if lt IE 9]>
-  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  	<![endif]-->
-	<link rel="stylesheet" href="styles.css">
-	<script src="script.js"></script>
-</head>
-<body>
-	<header>
-		<h2 align="center">HTML5 Form</h2>
-	</header>
-	<nav>
-		<ul>
-			<li><a href="#">menu1</a></li>
-			<li><a href="#">menu2</a></li>
-			<li><a href="#">menu3</a></li>
-		</ul>
-	</nav>
-	<main>
-		<section>
-				<h3>Registration Form</h3>
-				<p>
-					Below is the <mark>form</mark> for <bdi><i>registration</i></bdi>
-				</p>
-				<section>
-					<form method="post" action="success.html">
-						First Name:	<input type="text" name="firstname" placeholder="Please enter first name" pattern="^[a-zA-Z]+$" required autofocus ><br>
-						Last Name: <input type="text" name="lastname" placeholder="Please enter Last name" pattern="^[a-zA-Z]+$" required autofocus><br>
-						Email: <input type="text" name="email" placeholder="example@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required autofocus><br>
-						Select Gender: <br><input type="radio" name="gender" value="Male" checked="">Male<br>
-						<input type="radio" name="gender" value="Female">Female<br>
-						<input type="radio" name="gender" value="Other">Other<br>
-						Please select from the listed options:
-							<select name="continue" required>
-							<option value="">Select</option>
-							<option value="yes">Yes</option>
-							<option value="no">No</option>
-						</select><br>
-						Additional details:
-							<textarea name="message" rows="10" cols="30" required autofocus></textarea><br>
-						<input type="submit" name="Submit">
-					</form>
-				</section>
-		</section>
-		<!-- <section>
-			<dialog>testing dialog tag</dialog>
-			 <figure>
-  				<img src="pic_mountain.jpg" alt="The Pulpit Rock" width="304" height="228">
-  				<figcaption>Fig1. - The Pulpit Rock, Norway.</figcaption>
-			</figure> 
-			<aside>Demo aside tag</aside>
-			<summary>Summary</summary><details>testing details tag</details>
-			<time>11:30AM</time><wbr>
-			<progress value="1" max="5">
-		</section>
-		-->
-	</main>
-	<footer>
-		<p>&copy;All rights reserved</p>
-		<p>For further information, contact:<a href="mailto:reshma@qburst.com">reshma@qburst.com</a>.</p>
-	</footer>
-</body>
+	<head>
+		<title>Demo Page</title>
+		<meta charset="utf-8" />
+		 <!--[if lt IE 9]>
+	  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	  	<![endif]-->
+	  	<link rel="stylesheet" href="assets/css/normalize.css">
+		<link rel="stylesheet" href="assets/css/styles.css">
+		<script src="assets/js/script.js"></script>
+	</head>
+	<body id="index">
+		<header>
+			<h1 align="center">Landscapes</h1>
+		</header>
+		<nav>
+			<ul class="tabs">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+		</nav>
+		<main class="tabcontents">
+			<section id="content1">
+				<article>
+					<div><h2><i>Creating beautiful gardens!</i></h2></div>
+					Register with us to know more...
+				</article>
+			</section>
+		</main>
+		<footer>
+			<p>&copy;All rights reserved</p>
+			<p>For further information, contact:<a href="mailto:example@domain.com">example@domain.com</a>.</p>
+		</footer>
+	</body>
 </html>
