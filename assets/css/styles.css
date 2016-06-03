@@ -182,3 +182,7 @@ article, footer, #success main h2 {
 #success main h2 {
 	color: #fff;
 }
+.submitDiv {
+    width: 50%;
+    float: right;
+}
