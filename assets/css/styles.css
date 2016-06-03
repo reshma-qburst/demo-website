@@ -145,7 +145,7 @@ footer {
  	-ms-filter: blur(5px);
  	filter: blur(5px);
 }
-#index, #index .tabcontents, #gallery, #success, #success .tabcontents {
+#index, #index .tabcontents, #gallery {
 	background-color: #ffffb2;
 }
 #content1 {
@@ -158,13 +158,13 @@ footer {
 	color: #fff;
 	font-weight: bold;
 }
-article, footer, .tabcontents h3 {
+article, footer, #success main h2 {
 	text-align:center;
 	text-align: -moz-center;
 }
 .requiredField:after {
     content: " *";
-    color: #FF0000;
+    color: #ff0000;
     font-size: 10px;
     position: absolute;
     margin-left: 6px;
@@ -178,4 +178,7 @@ article, footer, .tabcontents h3 {
     min-height: 500px;
     height: auto !important;
     height: 500px;
+}
+#success main h2 {
+	color: #fff;
 }
