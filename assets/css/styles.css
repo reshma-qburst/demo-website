@@ -23,6 +23,12 @@ header, footer {
 	background-color: #444;
 	margin-bottom: 5px;
 }
+header {
+	background-image: url(../images/header.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+}
 nav ul {
 	margin: 0;
 	padding: 0;
@@ -112,9 +118,6 @@ footer {
     -ms-box-shadow: 0 0 10px 5px #356b0b inset;
     -o-box-shadow: 0 0 10px 5px #356b0b inset;
 }
-.contactForm .submitDiv {
-	padding-right: 192px;
-}
 .contactForm input:focus, textarea:focus {
 	border: 2px solid red;
 }
@@ -122,8 +125,7 @@ footer {
 	background-color: #ffffb2;
 	position: fixed;
   	z-index: 9999;
-  	//margin-left: 315px;
-  	width: 555px;
+  	width: 600px;
 }
 #contact:before {
  	content: "";
