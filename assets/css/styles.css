@@ -124,10 +124,10 @@ footer {
   
   	display: block;
   	background-image: url("../images/bg-home.jpg");
-  	width: 1200px;
-  	height: 800px;
-  	margin-left: 7px;
+  	width: 100%;
+  	height: 100%;
   	margin-top: 58px;
+  	background-size: cover;
   
  	-webkit-filter: blur(5px);
  	-moz-filter: blur(5px);
