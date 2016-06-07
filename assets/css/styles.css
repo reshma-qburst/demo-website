@@ -37,9 +37,6 @@ nav ul li {
 	display: inline;
 	margin: 5px;
 }
-bdi {
-	color: #68b12f;
-}
 nav ul.tabs li a {
     font: normal 12px Verdana;
     text-decoration: none;
