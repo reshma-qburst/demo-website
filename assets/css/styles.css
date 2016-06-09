@@ -36,12 +36,12 @@ nav ul.tabs li a {
     font: normal 12px Verdana;
     text-decoration: none;
     position: relative;
-    padding: 6px 16px;
+    padding: 6px 20px;
     border: 1px solid #CCC;
     border-bottom-color: #B7B7B7;
     color: #000;
     background: #F0F0F0 url(../images/tabbg.gif) 0 0 repeat-x;
-    border-radius: 3px 3px 0 0;
+    border-radius: 178px 0px;
     outline:none;
 }
 nav ul.tabs li a:visited {
@@ -115,8 +115,6 @@ footer {
 }
 #content3 {
 	background-color: #EDED8D;
-	position: relative;
-  	z-index: 9999;
 }
 #contact:before {
  	content: "";
@@ -182,4 +180,30 @@ article, footer, #success main h2 {
 nav ul.tabs li.selectedMenu a {
 	background: #B7B756;
 	color: #FF1;
+	border: 1px solid #B7B756;
+}
+.contactForm textarea {
+    resize: none;
+}
+footer p a {
+	color: #fff;
+}
+.rButton, .convText {
+    vertical-align: middle;
+}
+.contactForm input {
+	padding-left: 5px;
+}
+.contactForm select {
+	margin: 0px;
+ 	border-width: 1px;
+ 	border-style: solid;
+ 	padding-right: 21px;
+    padding-left: 5px;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0px;
+	-moz-appearance: none;
+	appearance: none;
+	background: url('../images/dropdown.png') no-repeat 97% 50% #ffffff;
+	background-size: contain;
 }
