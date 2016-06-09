@@ -13,8 +13,8 @@ header, footer {
 	background-color: #444;
 }
 section {
-	padding: 10px;
-	margin-top: 5px;
+	padding: 10px 25px;
+	margin: 50px auto;
 }
 header {
 	background-image: url(../images/header.jpg);
@@ -22,13 +22,15 @@ header {
     background-repeat: no-repeat;
     padding-top: 100px;
 }
+nav {
+	padding-top: 6px;
+}
 nav ul {
 	margin: 0;
 	padding: 0;
 }
 nav ul li {
 	display: inline;
-	margin: 5px;
 }
 nav ul.tabs li a {
     font: normal 12px Verdana;
@@ -113,9 +115,8 @@ footer {
 }
 #content3 {
 	background-color: #ffffb2;
-	position: fixed;
+	position: relative;
   	z-index: 9999;
-  	width: 600px;
 }
 #contact:before {
  	content: "";
@@ -159,17 +160,22 @@ article, footer, #success main h2 {
     line-height: 100%;
 }
 #contact main {
-    width: 660px;
-    padding: 20px 50px 20px 50px;
+    width: 530px;
     margin: 20px auto;
     min-height: 500px;
     height: auto !important;
-    height: 500px;
 }
 #success main h2 {
 	color: #fff;
 }
 .submitDiv {
-    width: 50%;
-    float: right;
+	text-align: center;
+	margin-bottom: 6px;
+}
+#content3 h2 {
+	text-align: center;
+}
+.contactForm input, select, textarea {
+	border-radius: 0px;
+	border: 1px solid #000;
 }
