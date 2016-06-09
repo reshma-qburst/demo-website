@@ -179,3 +179,7 @@ article, footer, #success main h2 {
 	border-radius: 0px;
 	border: 1px solid #000;
 }
+nav ul.tabs li.selectedMenu a {
+	background: #B7B756;
+	color: #FF1;
+}
