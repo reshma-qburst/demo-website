@@ -8,9 +8,10 @@
 	  	<![endif]-->
 	  	<link rel="stylesheet" href="assets/css/normalize.css">
 		<link rel="stylesheet" href="assets/css/styles.css">
+		<script src="assets/js/gallery-item.json"></script>
 		<script src="assets/js/script.js"></script>
 	</head>
-	<body id="gallery">
+	<body id="gallery" onload="updateMe();">
 		<header></header>
 		<nav>
 			<ul class="tabs">
@@ -20,8 +21,27 @@
 			</ul>
 		</nav>
 		<main>
-			<article>
-				<h2>Content will be updated soon...</h2>
+		<h2 style="text-align:center;color:#fff;">Image Gallery</h2>
+			<article id="banner-img">
+				<div id="banner-img-wrapper">
+				</div>
+				<div class="clearfix"></div>
+
+				<!-- The Modal -->
+				<div id="myModal" class="modal">
+				  <span class="close">×</span>
+				  <div id="titleText" class="title-content"></div>
+				  <img class="modal-content" id="img01">
+				  <div id="caption"></div>
+				</div>
+
+				<script>
+				var modal = document.getElementById('myModal');
+				var span = document.getElementsByClassName("close")[0];
+				span.onclick = function() { 
+				    modal.style.display = "none";
+				}
+				</script>
 			</article>
 		</main>
 		<footer>
