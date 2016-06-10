@@ -265,15 +265,15 @@ div.desc {
 #caption {
     margin: 0px;
     display: block;
-    width: 430px;
     text-align: center;
     color: #fff;
     float: right;
-    margin-left: 726px;
+    margin-left: 690px;
     padding-top: 200px;
     position: absolute;
     z-index: 1;
     text-align: left;
+    padding-right: 30px;
 }
 /* Add Animation */
 .modal-content, #caption, #titleText {    
@@ -341,10 +341,11 @@ div.desc {
     position: absolute;
     z-index: 2;
     color: #fff;
-    margin-left: 545px;
+    margin-left: 690px;
     width: 50%;
     text-transform: uppercase;
     font-size: 15px;
+    text-align: left;
 }
 #banner-img-wrapper {
 	clear: both;
