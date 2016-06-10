@@ -213,7 +213,7 @@ footer p a {
 }
 /* The Image Box */
 div.img {
-    border: 1px solid #ccc;
+    border: 1px solid #fff;
 }
 div.img:hover {
     border: 1px solid #777;
@@ -253,6 +253,7 @@ div.desc {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    padding-bottom: 60px;
 }
 /* Modal Content (image) */
 .modal-content {
@@ -274,6 +275,7 @@ div.desc {
     z-index: 1;
     text-align: left;
     padding-right: 30px;
+    width: 470px;
 }
 /* Add Animation */
 .modal-content, #caption, #titleText {    
