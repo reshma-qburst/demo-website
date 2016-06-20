@@ -43,7 +43,13 @@
 				var modal = document.getElementById('myModal');
 				var span = document.getElementsByClassName("close")[0];
 				span.onclick = function() {
-				    modal.style.display = "none";
+				    //modal.style.display = "none";
+				    if(document.getElementById("titleText"))
+				    	document.getElementById("titleText").setAttribute("id","titleTextNew");
+				    if(document.getElementById("img01"))
+				    	document.getElementById("img01").setAttribute("id","img01New");
+				    if(document.getElementById("caption"))
+				    	document.getElementById("caption").setAttribute("id","captionNew");
 				}
 				</script>
 			</article>
