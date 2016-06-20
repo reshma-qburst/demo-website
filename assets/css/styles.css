@@ -257,7 +257,6 @@ div.desc {
 }
 /* Modal Content (image) */
 .modal-content {
-    margin-left: 40px;
     display: block;
     max-width: 600px;
     float: left;
@@ -269,13 +268,10 @@ div.desc {
     text-align: center;
     color: #fff;
     float: right;
-    margin-left: 690px;
-    padding-top: 200px;
-    position: absolute;
     z-index: 1;
     text-align: left;
-    padding-right: 30px;
-    width: 470px;
+    padding-right: 70px;
+    width: 40%;
 }
 /* Add Animation */
 .modal-content, #caption, #titleText {    
@@ -339,16 +335,31 @@ div.desc {
 }
 .title-content {
 	float: right;
-    padding-top: 165px;
-    position: absolute;
-    z-index: 2;
     color: #fff;
-    margin-left: 690px;
     width: 50%;
     text-transform: uppercase;
     font-size: 15px;
-    text-align: left;
 }
 #banner-img-wrapper {
 	clear: both;
+}
+.previous {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url('../images/white_arrow_left.png') no-repeat;
+    font-size: 1px;
+    color: #444;
+    background-size: 100%; 
+    float: left;
+}
+.next {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url('../images/white_arrow_right.png') no-repeat;
+    font-size: 1px;
+    color: #444;
+    background-size: 100%; 
+    float: right;
 }
