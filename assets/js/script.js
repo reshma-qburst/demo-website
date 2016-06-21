@@ -23,9 +23,9 @@ function updateMe(galleryArray){
 	var modalImg = document.getElementById("img01");
 	var titleText = document.getElementById("titleText");
 	var descText = document.getElementById("caption");
-	var i;
-	for (i = 0; i < images.length; i++) {
-		   images[i].onclick = function(){
+	
+	for (var k = 0; k < images.length; k++) {
+		   images[k].onclick = function(){
 		   		modal.style.display = "block";
 				if(document.getElementById("titleTextNew"))
 				   	document.getElementById("titleTextNew").setAttribute("id","titleText");
@@ -45,3 +45,36 @@ function updateMe(galleryArray){
 	}
 }
 
+var j = 0;
+function swipe(id){
+	
+	var images = document.getElementsByTagName('img');
+	document.getElementById("img01").src = images[j].src;
+	document.getElementById("caption").innerHTML = images[j].nextElementSibling.innerHTML;
+	document.getElementById("titleText").innerHTML = images[j].title;
+
+	if(j < images.length - 2){
+		j++; 
+	}
+	else {
+		j = 0;
+		if(id=='next'){
+			if(document.getElementById("img01").src == images[0].src){
+				console.log('first image' + images[0].src);
+			}
+			document.getElementById("next").setAttribute("class","disabled");
+			document.getElementById("next").setAttribute("onclick","");
+
+			document.getElementById("previous").setAttribute("class","previous");
+			document.getElementById("previous").setAttribute("onclick","swipe('previous')");
+		}else{
+			if (document.getElementById("img01").src == images[images.length - 2].src){
+				document.getElementById("previous").setAttribute("class","disabled");
+				document.getElementById("previous").setAttribute("onclick","swipe('previous')");
+
+				document.getElementById("next").setAttribute("class","next");
+				document.getElementById("next").setAttribute("onclick","swipe('next')");
+			}
+		}
+	}
+}
