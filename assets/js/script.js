@@ -33,7 +33,10 @@ function updateMe(galleryArray){
 				   	document.getElementById("img01New").setAttribute("id","img01");
 				if(document.getElementById("captionNew"))
 				   	document.getElementById("captionNew").setAttribute("id","caption");
-
+				document.getElementById("previous").setAttribute("class","previous");
+				document.getElementById("next").setAttribute("class","next");
+				document.getElementById("img01").setAttribute("class","modal-content");
+				document.getElementById("titleText").setAttribute("class","title-content");
 		   		modalImg.src = this.src;
 		   		modalImg.alt = this.alt;
 		   		titleText.innerHTML = this.title;
@@ -41,3 +44,4 @@ function updateMe(galleryArray){
 		}
 	}
 }
+

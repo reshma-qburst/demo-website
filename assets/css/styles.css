@@ -349,25 +349,21 @@ div.desc {
 #banner-img-wrapper {
 	clear: both;
 }
-.previous {
+#previous, #next {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background: url('../images/white_arrow_left.png') no-repeat;
     font-size: 1px;
     color: #444;
     background-size: 100%; 
+}
+.previous {
+    background: url('../images/white_arrow_left.png') no-repeat;
     float: left;
     margin-top: 200px;
 }
 .next {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
     background: url('../images/white_arrow_right.png') no-repeat;
-    font-size: 1px;
-    color: #444;
-    background-size: 100%; 
     float: right;
     margin-top: -86px;
     margin-left: 90px;
@@ -385,5 +381,5 @@ div.desc {
 }
 @keyframes zoomOut {
     from {transform:scale(1)} 
-    to {transform:scale(0.1)}
+    to {transform:scale(0)}
 }
