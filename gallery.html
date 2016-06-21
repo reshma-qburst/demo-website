@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
-		<title>Demo Page</title>
+		<title>Landscapes</title>
 		<meta charset="utf-8" />
 		 <!--[if lt IE 9]>
 	  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	  	<![endif]-->
+	  	<link rel="shortcut icon" href="assets/images/favicon.ico">
 	  	<link rel="stylesheet" href="assets/css/normalize.css">
 		<link rel="stylesheet" href="assets/css/styles.css">
 		<script src="assets/js/script.js"></script>
@@ -29,16 +30,33 @@
 				<!-- The Modal -->
 				<div id="myModal" class="modal">
 				  <span class="close">×</span>
-				  <div id="titleText" class="title-content"></div>
-				  <img class="modal-content" id="img01">
-				  <div id="caption"></div>
+				  <a href="#" onclick="" class="previous" id="previous"></a>
+				  <div class="slider">
+				  	<div id="titleText" class="title-content"></div>
+				  	<img class="modal-content" id="img01">
+				  	<div id="caption"></div>
+				  </div>
+				  <a href="#" onclick="" class="next" id="next"></a>
 				</div>
 
 				<script>
 				var modal = document.getElementById('myModal');
 				var span = document.getElementsByClassName("close")[0];
-				span.onclick = function() { 
-				    modal.style.display = "none";
+				span.onclick = function() {
+				    
+				    	if(document.getElementById("titleText"))
+				    		document.getElementById("titleText").setAttribute("id","titleTextNew");
+				    	if(document.getElementById("img01"))
+				    		document.getElementById("img01").setAttribute("id","img01New");
+				    	if(document.getElementById("caption"))
+				    		document.getElementById("caption").setAttribute("id","captionNew");
+				    	document.getElementById("img01New").setAttribute("class","");
+				    	document.getElementById("titleTextNew").setAttribute("class","");
+				    	document.getElementById("previous").setAttribute("class","");
+						document.getElementById("next").setAttribute("class","");
+						setTimeout(function() {
+						  modal.style.display = "none";
+						}, 500);
 				}
 				</script>
 			</article>

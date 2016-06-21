@@ -27,6 +27,16 @@ function updateMe(galleryArray){
 	for (i = 0; i < images.length; i++) {
 		   images[i].onclick = function(){
 		   		modal.style.display = "block";
+				if(document.getElementById("titleTextNew"))
+				   	document.getElementById("titleTextNew").setAttribute("id","titleText");
+				if(document.getElementById("img01New"))
+				   	document.getElementById("img01New").setAttribute("id","img01");
+				if(document.getElementById("captionNew"))
+				   	document.getElementById("captionNew").setAttribute("id","caption");
+				document.getElementById("previous").setAttribute("class","previous");
+				document.getElementById("next").setAttribute("class","next");
+				document.getElementById("img01").setAttribute("class","modal-content");
+				document.getElementById("titleText").setAttribute("class","title-content");
 		   		modalImg.src = this.src;
 		   		modalImg.alt = this.alt;
 		   		titleText.innerHTML = this.title;

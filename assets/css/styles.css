@@ -259,25 +259,22 @@ div.desc {
 }
 /* Modal Content (image) */
 .modal-content {
-    margin-left: 40px;
     display: block;
     max-width: 600px;
     float: left;
+    margin-left: 50px;
 }
 /* Caption of Modal Image */
 #caption {
     margin: 0px;
     display: block;
-    text-align: center;
     color: #fff;
     float: right;
-    margin-left: 690px;
-    padding-top: 200px;
-    position: absolute;
     z-index: 1;
     text-align: left;
-    padding-right: 30px;
-    width: 470px;
+    padding-right: 70px;
+    width: 40%;
+    padding-top: 20px;
 }
 /* Add Animation */
 .modal-content, #caption, #titleText {    
@@ -341,20 +338,19 @@ div.desc {
 }
 .title-content {
 	float: right;
-    padding-top: 165px;
-    position: absolute;
-    z-index: 2;
     color: #fff;
-    margin-left: 690px;
-    width: 50%;
+    width: 40%;
     text-transform: uppercase;
     font-size: 15px;
     text-align: left;
+    margin: 0px;
+    display: block;
+    z-index: 1;
+    padding-top: 100px;
 }
 #banner-img-wrapper {
 	clear: both;
-}
-#gmap_canvas img {
+}#gmap_canvas img {
     max-width:none!important;
     background:none!important
 }
@@ -401,4 +397,38 @@ div.desc {
     font-family: 'OpenSansItalic';
     font-size: 14px;
     margin-top: 8px;
+}
+#previous, #next {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 1px;
+    color: #444;
+    background-size: 100%; 
+}
+.previous {
+    background: url('../images/white_arrow_left.png') no-repeat;
+    float: left;
+    margin-top: 200px;
+}
+.next {
+    background: url('../images/white_arrow_right.png') no-repeat;
+    float: right;
+    margin-top: -86px;
+    margin-left: 90px;
+}
+/* Reverse Animation */
+#captionNew, #titleTextNew, #img01New {    
+    -webkit-animation-name: zoomOut;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoomOut;
+    animation-duration: 0.6s;
+}
+@-webkit-keyframes zoomOut {
+    from {transform:scale(1)} 
+    to {transform:scale(0)}
+}
+@keyframes zoomOut {
+    from {transform:scale(1)} 
+    to {transform:scale(0)}
 }
