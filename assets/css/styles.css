@@ -7,7 +7,7 @@ body {
 	background-image: url(../images/middle-bg.jpg);
 	display: block;
 	max-width: 100%;
-	padding-bottom: 80px;
+	padding-bottom: 100px;
 }
 header, footer {
 	color: #fff;
@@ -115,7 +115,10 @@ footer {
 	border: 2px solid red;
 }
 #content3 {
-	background-color: #EDED8D;
+	background-color: #EDEDB0;
+    float: left;
+    width: 43%;
+    margin-left: 55px;
 }
 #contact:before {
  	content: "";
@@ -159,10 +162,9 @@ article, footer, #success main h2 {
     line-height: 100%;
 }
 #contact main {
-    width: 530px;
-    margin: 20px auto;
     min-height: 500px;
     height: auto !important;
+    margin-bottom: 100px;
 }
 #success main h2 {
 	color: #fff;
@@ -351,4 +353,52 @@ div.desc {
 }
 #banner-img-wrapper {
 	clear: both;
+}
+#gmap_canvas img {
+    max-width:none!important;
+    background:none!important
+}
+#mapContent {
+    padding: 0;
+    float: right;
+    margin-top: 50px;
+    margin-right: 55px;
+    background-color: #fff;
+}
+.address {
+    margin: 0;
+    padding: 0;
+    width: 100%
+}
+.address li {
+    float: left;
+    list-style: none outside none;
+    width: 30%;
+    padding-left: 10px;
+}
+.viewMap {
+    cursor: pointer;
+}
+.address li:hover .addTexts0, .address .addTextDiv.active .addTexts0 {
+    color: #89C33F;
+}
+.addTextDiv p {
+    text-align: left;
+    width: 100%;
+    color: #707070;
+}
+.addTextDiv.active * {
+    color: #000;
+}
+.addTexts0 {
+    color: #000;
+    font-family: 'montserratBold';
+    font-size: 14px;
+    font-weight: bold;
+}
+.addTexts1 {
+    color: #000;
+    font-family: 'OpenSansItalic';
+    font-size: 14px;
+    margin-top: 8px;
 }
