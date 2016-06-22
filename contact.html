@@ -110,37 +110,6 @@
                     </ul>
                 </div>
                 <script type='text/javascript'>
-					function init_map(lat,long,content,addr){
-						if(addr == 'address1'){
-							document.getElementById("addTextDiv1").setAttribute("class","addTextDiv active");
-							document.getElementById("addTextDiv2").setAttribute("class","addTextDiv");
-							document.getElementById("addTextDiv3").setAttribute("class","addTextDiv");
-						}else if(addr == 'address2'){
-							document.getElementById("addTextDiv2").setAttribute("class","addTextDiv active");
-							document.getElementById("addTextDiv1").setAttribute("class","addTextDiv");
-							document.getElementById("addTextDiv3").setAttribute("class","addTextDiv");
-						}else{
-							document.getElementById("addTextDiv3").setAttribute("class","addTextDiv active");
-							document.getElementById("addTextDiv1").setAttribute("class","addTextDiv");
-							document.getElementById("addTextDiv2").setAttribute("class","addTextDiv");
-						}
-						var myOptions = {
-							zoom:10,
-							center:new google.maps.LatLng(parseFloat(lat),parseFloat(long)),
-							mapTypeId: google.maps.MapTypeId.ROADMAP
-						};
-						map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
-						marker = new google.maps.Marker({
-							map: map,position: new google.maps.LatLng(parseFloat(lat),parseFloat(long))
-						});
-						infowindow = new google.maps.InfoWindow({
-							content: content
-						});
-						google.maps.event.addListener(marker, 'click', function(){
-							infowindow.open(map,marker);
-						});
-						infowindow.open(map,marker);
-						}
 						google.maps.event.addDomListener(window, 'load', init_map(40.7554767,-73.9802168,'2 W 45th St. Ste 1501 New York, NY 10036','address1'));
 				</script>
 			</div>
