@@ -1,3 +1,39 @@
+function init_map(lat,long,content,addr){
+	if(addr == 'address1'){
+		setActiveClass("1","active");
+		setActiveClass("2","");
+		setActiveClass("3","");
+	}else if(addr == 'address2'){
+		setActiveClass("2","active");
+		setActiveClass("1","");
+		setActiveClass("3","");
+	}else{
+		setActiveClass("3","active");
+		setActiveClass("1","");
+		setActiveClass("2","");
+	}
+	var myOptions = {
+			zoom:10,
+			center:new google.maps.LatLng(parseFloat(lat),parseFloat(long)),
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+	map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+	marker = new google.maps.Marker({
+		map: map,position: new google.maps.LatLng(parseFloat(lat),parseFloat(long))
+	});
+	infowindow = new google.maps.InfoWindow({
+		content: content
+	});
+	google.maps.event.addListener(marker, 'click', function(){
+		infowindow.open(map,marker);
+	});
+	infowindow.open(map,marker);
+}
+
+function setActiveClass(div,className){
+	document.getElementById("addTextDiv"+div).setAttribute("class","addTextDiv "+className);
+}
+
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.overrideMimeType("application/json");
 xmlhttp.open('GET', 'gallery-item.json', true);
@@ -34,4 +70,3 @@ function updateMe(galleryArray){
 		}
 	}
 }
-
