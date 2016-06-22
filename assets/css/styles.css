@@ -307,21 +307,6 @@ div.desc {
     text-decoration: none;
     cursor: pointer;
 }
-/* Responsive Columns */
-@media only screen and (max-width: 700px){
-    .responsive {
-        width: 49.99999%;
-        margin: 6px 0;
-    }
-    .modal-content {
-        width: 100%;
-    }
-}
-@media only screen and (max-width: 500px){
-    .responsive {
-        width: 100%;
-    }
-}
 /* Clear Floats */
 .clearfix:after {
     content: "";

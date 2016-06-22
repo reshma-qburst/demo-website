@@ -39,7 +39,7 @@ xmlhttp.overrideMimeType("application/json");
 xmlhttp.open('GET', 'gallery-item.json', true);
 xmlhttp.onreadystatechange = function () {
           if (xmlhttp.readyState == 4 && xmlhttp.status == "200") {
-         	updateMe(JSON.parse(xmlhttp.responseText));
+         	displayGallery(JSON.parse(xmlhttp.responseText));
           }
     };
 xmlhttp.send(null);
@@ -67,11 +67,12 @@ function enableArrows(){
 	document.getElementById("previous").setAttribute("onclick","slidePrev('previous')");
 }
 
-function updateMe(galleryArray){
+function displayGallery(galleryArray){
+
 	var output='';
 	for (i in galleryArray) {
 	    output += 	"<div class='responsive'><div class='img'>"
-	     			+"<img src='"+galleryArray[i].src+"' alt='"+galleryArray[i].alt+"' title='"+galleryArray[i].title+"' width='300' height='200'>"
+	     			+"<img id='image-"+i+"' src='"+galleryArray[i].src+"' alt='"+galleryArray[i].alt+"' title='"+galleryArray[i].title+"' width='300' height='200'>"
 	        		+"<div style='display:none;'>"+galleryArray[i].desc+"</div>"
 	        		+"<div class='title'>"+galleryArray[i].title+"</div>"
 	        		+"</div></div>";
@@ -86,8 +87,15 @@ function updateMe(galleryArray){
 	for (var k = 0; k < images.length; k++) {
 		   images[k].onclick = function(){
 
+		   	var newId = this.id;
+		   	newId = newId.split('-');
+		   	countNext = parseInt(newId[1]);
+
 		   	var arrayLength = images.length;
-		   	countPrev = arrayLength - 2;
+		   	countPrev = arrayLength - 1;
+		   	if(images[arrayLength-2].src != this.src){
+		   		countPrev = parseInt(newId[1]);
+		   	}
 
 		   		modal.style.display = "block";
 				if(document.getElementById("titleTextNew"))
@@ -115,32 +123,36 @@ function updateMe(galleryArray){
 	}
 }
 
-function slidePrev(id){
-	images = document.getElementsByTagName('img');
+function slidePrev(){
+	var images = document.getElementsByTagName('img');
 	if(images[0].src == images[countPrev].src){
 		disablePrev();
 	}else{
-		if(countPrev >0){
+		document.getElementById("next").setAttribute("class","next");
+		document.getElementById("next").setAttribute("onclick","slideNext('next')");
+		if(countPrev > 0){
 			document.getElementById("img01").src = images[countPrev-1].src;
 			document.getElementById("caption").innerHTML = images[countPrev-1].nextElementSibling.innerHTML;
 			document.getElementById("titleText").innerHTML = images[countPrev-1].title;
-			countPrev--;
+			countPrev --;
 		}else {
 			countPrev = images.length - 2;
 		}
 	}
 }
 
-function slideNext(id){
-	images = document.getElementsByTagName('img');
-	if(images[images.length-1].src == images[countNext+1].src){
+function slideNext(){
+	countNext += 1;
+	var imagesArray = document.getElementsByTagName('img');
+	if(imagesArray[imagesArray.length-1].src == imagesArray[countNext].src){
 		disableNext();
 	}else{
-		if(countNext < images.length - 2){
-			document.getElementById("img01").src = images[countNext+1].src;
-			document.getElementById("caption").innerHTML = images[countNext+1].nextElementSibling.innerHTML;
-			document.getElementById("titleText").innerHTML = images[countNext+1].title;
-			countNext++;
+		document.getElementById("previous").setAttribute("class","previous");
+		document.getElementById("previous").setAttribute("onclick","slidePrev('previous')");
+		if(countNext < imagesArray.length - 1){
+			document.getElementById("img01").src = imagesArray[countNext].src;
+			document.getElementById("caption").innerHTML = imagesArray[countNext].nextElementSibling.innerHTML;
+			document.getElementById("titleText").innerHTML = imagesArray[countNext].title;
 		}else {
 			countNext = 0;
 		}
