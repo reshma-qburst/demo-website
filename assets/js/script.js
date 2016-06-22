@@ -106,7 +106,7 @@ function displayGallery(galleryArray){
 				   	document.getElementById("captionNew").setAttribute("id","caption");
 
 				if(images[0].src == this.src){
-					disablePrev()
+					disablePrev();
 				} else if(images[arrayLength-2].src == this.src){
 					disableNext();
 				}else{
@@ -124,6 +124,7 @@ function displayGallery(galleryArray){
 }
 
 function slidePrev(){
+	
 	var images = document.getElementsByTagName('img');
 	if(images[0].src == images[countPrev].src){
 		disablePrev();
@@ -135,6 +136,7 @@ function slidePrev(){
 			document.getElementById("caption").innerHTML = images[countPrev-1].nextElementSibling.innerHTML;
 			document.getElementById("titleText").innerHTML = images[countPrev-1].title;
 			countPrev --;
+			countNext = countPrev+1;
 		}else {
 			countPrev = images.length - 2;
 		}
@@ -153,6 +155,7 @@ function slideNext(){
 			document.getElementById("img01").src = imagesArray[countNext].src;
 			document.getElementById("caption").innerHTML = imagesArray[countNext].nextElementSibling.innerHTML;
 			document.getElementById("titleText").innerHTML = imagesArray[countNext].title;
+			countPrev = countNext+1;
 		}else {
 			countNext = 0;
 		}
