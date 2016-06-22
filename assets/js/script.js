@@ -1,3 +1,12 @@
+var countPrev = 0;
+var countNext = 0;
+var images;
+var modalImg;
+var titleText;
+var descText;
+var nextElem;
+var prevElem;
+
 function init_map(lat,long,content,addr){
 	if(addr == 'address1'){
 		setActiveClass("1","active");
@@ -44,27 +53,26 @@ xmlhttp.onreadystatechange = function () {
     };
 xmlhttp.send(null);
 
-
-var countPrev = 0;
-var countNext = 0;
-
 function disableNext(){
-	document.getElementById("next").setAttribute("class","disabled");
-	document.getElementById("next").setAttribute("onclick","");
-	document.getElementById("previous").setAttribute("class","previous");
-	document.getElementById("previous").setAttribute("onclick","slidePrev('previous')");
+	setAttribute(nextElem,"class","disabled");
+	setAttribute(nextElem,"onclick","");
+	enableNext();
 }
 function disablePrev(){
-	document.getElementById("previous").setAttribute("class","disabled");
-	document.getElementById("previous").setAttribute("onclick","");
-	document.getElementById("next").setAttribute("class","next");
-	document.getElementById("next").setAttribute("onclick","slideNext('next')");
+	setAttribute(prevElem,"class","disabled");
+	setAttribute(prevElem,"onclick","");
+	enableNext();
 }
-function enableArrows(){
-	document.getElementById("next").setAttribute("class","next");
-	document.getElementById("next").setAttribute("onclick","slideNext('next')");
-	document.getElementById("previous").setAttribute("class","previous");
-	document.getElementById("previous").setAttribute("onclick","slidePrev('previous')");
+function setAttribute(elem,type1,type2){
+	elem.setAttribute(type1,type2);
+}
+function enablePrev(){
+	setAttribute(prevElem,"class","previous");
+	setAttribute(prevElem,"onclick","slidePrev('previous')");
+}
+function enableNext(){
+	setAttribute(nextElem,"class","next");
+	setAttribute(nextElem,"onclick","slideNext('next')");
 }
 
 function displayGallery(galleryArray){
@@ -79,10 +87,10 @@ function displayGallery(galleryArray){
 	        		document.getElementById("banner-img-wrapper").innerHTML = output;
 	}
 
-	var images = document.getElementsByTagName('img');
-	var modalImg = document.getElementById("img01");
-	var titleText = document.getElementById("titleText");
-	var descText = document.getElementById("caption");
+	images = document.getElementsByTagName('img');
+	modalImg = document.getElementById("img01");
+	titleText = document.getElementById("titleText");
+	descText = document.getElementById("caption");
 	
 	for (var k = 0; k < images.length; k++) {
 		   images[k].onclick = function(){
@@ -98,6 +106,10 @@ function displayGallery(galleryArray){
 		   	}
 
 		   		modal.style.display = "block";
+
+		   		nextElem = document.getElementById("next");
+		   		prevElem = document.getElementById("previous");
+
 				if(document.getElementById("titleTextNew"))
 				   	document.getElementById("titleTextNew").setAttribute("id","titleText");
 				if(document.getElementById("img01New"))
@@ -110,11 +122,12 @@ function displayGallery(galleryArray){
 				} else if(images[arrayLength-2].src == this.src){
 					disableNext();
 				}else{
-					enableArrows();
+					enableNext();
+					enablePrev();
 				}
 
-				document.getElementById("img01").setAttribute("class","modal-content");
-				document.getElementById("titleText").setAttribute("class","title-content");
+				modalImg.setAttribute("class","modal-content");
+				titleText.setAttribute("class","title-content");
 		   		modalImg.src = this.src;
 		   		modalImg.alt = this.alt;
 		   		titleText.innerHTML = this.title;
@@ -129,12 +142,11 @@ function slidePrev(){
 	if(images[0].src == images[countPrev].src){
 		disablePrev();
 	}else{
-		document.getElementById("next").setAttribute("class","next");
-		document.getElementById("next").setAttribute("onclick","slideNext('next')");
+		enableNext();
 		if(countPrev > 0){
-			document.getElementById("img01").src = images[countPrev-1].src;
-			document.getElementById("caption").innerHTML = images[countPrev-1].nextElementSibling.innerHTML;
-			document.getElementById("titleText").innerHTML = images[countPrev-1].title;
+			modalImg.src = images[countPrev-1].src;
+			descText.innerHTML = images[countPrev-1].nextElementSibling.innerHTML;
+			titleText.innerHTML = images[countPrev-1].title;
 			countPrev --;
 			countNext = countPrev+1;
 		}else {
@@ -149,12 +161,11 @@ function slideNext(){
 	if(imagesArray[imagesArray.length-1].src == imagesArray[countNext].src){
 		disableNext();
 	}else{
-		document.getElementById("previous").setAttribute("class","previous");
-		document.getElementById("previous").setAttribute("onclick","slidePrev('previous')");
+		enablePrev();
 		if(countNext < imagesArray.length - 1){
-			document.getElementById("img01").src = imagesArray[countNext].src;
-			document.getElementById("caption").innerHTML = imagesArray[countNext].nextElementSibling.innerHTML;
-			document.getElementById("titleText").innerHTML = imagesArray[countNext].title;
+			modalImg.src = imagesArray[countNext].src;
+			descText.innerHTML = imagesArray[countNext].nextElementSibling.innerHTML;
+			titleText.innerHTML = imagesArray[countNext].title;
 			countPrev = countNext+1;
 		}else {
 			countNext = 0;
