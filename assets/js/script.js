@@ -12,12 +12,12 @@ function init_map(lat,long,content,addr){
 		setActiveClass("1","");
 		setActiveClass("2","");
 	}
-	var myOptions = {
+	var mapOptions = {
 			zoom:10,
 			center:new google.maps.LatLng(parseFloat(lat),parseFloat(long)),
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
-	map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+	map = new google.maps.Map(document.getElementById('gmap_canvas'), mapOptions);
 	marker = new google.maps.Marker({
 		map: map,position: new google.maps.LatLng(parseFloat(lat),parseFloat(long))
 	});
