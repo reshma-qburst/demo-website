@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="assets/css/styles.css">
 		<script src="assets/js/script.js"></script>
 	</head>
-	<body id="gallery" onload="updateMe();">
+	<body id="gallery" onload="displayGallery();">
 		<header></header>
 		<nav>
 			<ul class="tabs">
@@ -30,13 +30,13 @@
 				<!-- The Modal -->
 				<div id="myModal" class="modal">
 				  <span class="close">×</span>
-				  <a href="#" onclick="slidePrev(this.id)" class="previous" id="previous"></a>
+				  <a href="#" onclick="slidePrev()" class="previous" id="previous"></a>
 				  <div class="slider">
 				  	<div id="titleText" class="title-content"></div>
 				  	<img class="modal-content" id="img01">
 				  	<div id="caption"></div>
 				  </div>
-				  <a href="#" onclick="slideNext(this.id)" class="next" id="next"></a>
+				  <a href="#" onclick="slideNext()" class="next" id="next"></a>
 				</div>
 
 				<script>
