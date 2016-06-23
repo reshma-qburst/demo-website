@@ -94,7 +94,6 @@ function displayGallery(galleryArray){
 }
 
 function slidePrev(){
-	//images = document.getElementsByTagName('img');
 	counter = counter - 1;
 	if(images[0].src == images[counter].src){
 		disablePrev();
@@ -111,7 +110,6 @@ function slidePrev(){
 
 function slideNext(){
 	counter += 1;
-	//images = document.getElementsByTagName('img');
 	if(counter == images.length-2){
 		disableNext();
 		setContent();
