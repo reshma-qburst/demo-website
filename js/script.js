@@ -9,7 +9,7 @@ var modal;
 
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.overrideMimeType("application/json");
-xmlhttp.open('GET', 'gallery-item.json', true);
+xmlhttp.open('GET', '../js/gallery-item.json', true);
 xmlhttp.onreadystatechange = function () {
           if (xmlhttp.readyState == 4 && xmlhttp.status == "200") {
          	displayGallery(JSON.parse(xmlhttp.responseText));
