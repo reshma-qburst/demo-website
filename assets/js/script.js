@@ -5,7 +5,7 @@ var titleText;
 var descText;
 var nextElem;
 var prevElem;
-
+var modal;
 
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.overrideMimeType("application/json");
@@ -52,78 +52,81 @@ function displayGallery(galleryArray){
 	modalImg = document.getElementById("img01");
 	titleText = document.getElementById("titleText");
 	descText = document.getElementById("caption");
-	
+	modal = document.getElementById('myModal');
+		
 	for (var k = 0; k < images.length; k++) {
-
-		   images[k].onclick = function(){
-
+		images[k].onclick = function(){
 		   	var newId = this.id;
 		   	newId = newId.split('-');
 		   	counter = parseInt(newId[1]);
-
 			modal.style.display = "block";
-
 		   	nextElem = document.getElementById("next");
 		   	prevElem = document.getElementById("previous");
-
-			if(document.getElementById("titleTextNew"))
-			   	document.getElementById("titleTextNew").setAttribute("id","titleText");
-			if(document.getElementById("img01New"))
-			   	document.getElementById("img01New").setAttribute("id","img01");
-			if(document.getElementById("captionNew"))
-			   	document.getElementById("captionNew").setAttribute("id","caption");
-
-			if(counter == 0){
-				disablePrev();
-			} else if(counter == images.length-2){
-				disableNext();
-				enablePrev();
-			}else{
-				enableNext();
-				enablePrev();
-			}
-
-			modalImg.setAttribute("class","modal-content");
-			titleText.setAttribute("class","title-content");
-		   	modalImg.src = this.src;
-		   	modalImg.alt = this.alt;
-		   	titleText.innerHTML = this.title;
-		   	descText.innerHTML = this.nextElementSibling.innerHTML;
+			setId();
+			setAttribute(modalImg,"class","modal-content");
+			setAttribute(titleText,"class","title-content");
+			setModalContent();
 		}
 	}
 }
-
 function slidePrev(){
-	counter = counter - 1;
-	if(images[0].src == images[counter].src){
-		disablePrev();
-		setContent();
-	}else{
+	counter -= 1;
+	setModalContent();
+	if(counter >= 0){
 		enableNext();
-		if(counter >= 0){
-			setContent();
-		}else {
-			counter = images.length - 2;
-		}
+		setContent();
+	}else {
+		counter = images.length - 2;
 	}
 }
-
 function slideNext(){
 	counter += 1;
-	if(counter == images.length-2){
-		disableNext();
-		setContent();
-	}else{
+	setModalContent();
+	if(counter < images.length - 1){
 		enablePrev();
-		if(counter < images.length - 1){
-			setContent();
-		}else {
-			counter = 0;
-		}
+		setContent();
+	}else {
+		counter = 0;
 	}
 }
 function setContent() {
 	modalImg.src = images[counter].src;
+	modalImg.alt = images[counter].alt;
 	descText.innerHTML = images[counter].nextElementSibling.innerHTML;
 	titleText.innerHTML = images[counter].title;
+}
+function setModalContent(){
+	if(counter == 0){
+		disablePrev();
+	} else if(counter == images.length-2){
+		disableNext();
+		enablePrev();
+	}else{
+		enableNext();
+		enablePrev();
+	}
+	setContent();
+}
+function closeModal(){
+	if(titleText)
+		titleText.setAttribute("id","titleTextNew");
+	if(modalImg)
+		modalImg.setAttribute("id","img01New");
+	if(descText)
+		descText.setAttribute("id","captionNew");
+		setAttribute(document.getElementById("img01New"),"class","");
+		setAttribute(document.getElementById("titleTextNew"),"class","");
+		prevElem.setAttribute("class","");
+		nextElem.setAttribute("class","");
+		setTimeout(function() {
+			modal.style.display = "none";
+		}, 500);
+}
+function setId() {
+	if(document.getElementById("titleTextNew"))
+		setAttribute(document.getElementById("titleTextNew"),"id","titleText");
+	if(document.getElementById("img01New"))
+	   	setAttribute(document.getElementById("img01New"),"id","img01");
+	if(document.getElementById("captionNew"))
+	   setAttribute(document.getElementById("captionNew"),"id","caption");
 }

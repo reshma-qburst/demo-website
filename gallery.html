@@ -29,7 +29,7 @@
 
 				<!-- The Modal -->
 				<div id="myModal" class="modal">
-				  <span class="close">×</span>
+				  <span onclick="closeModal()" class="close">×</span>
 				  <a href="#" onclick="slidePrev()" class="previous" id="previous"></a>
 				  <div class="slider">
 				  	<div id="titleText" class="title-content"></div>
@@ -40,24 +40,7 @@
 				</div>
 
 				<script>
-				var modal = document.getElementById('myModal');
-				var span = document.getElementsByClassName("close")[0];
-				span.onclick = function() {
-				    
-				    	if(document.getElementById("titleText"))
-				    		document.getElementById("titleText").setAttribute("id","titleTextNew");
-				    	if(document.getElementById("img01"))
-				    		document.getElementById("img01").setAttribute("id","img01New");
-				    	if(document.getElementById("caption"))
-				    		document.getElementById("caption").setAttribute("id","captionNew");
-				    	document.getElementById("img01New").setAttribute("class","");
-				    	document.getElementById("titleTextNew").setAttribute("class","");
-				    	document.getElementById("previous").setAttribute("class","");
-						document.getElementById("next").setAttribute("class","");
-						setTimeout(function() {
-						  modal.style.display = "none";
-						}, 500);
-				}
+
 				</script>
 			</article>
 		</main>
