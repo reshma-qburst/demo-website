@@ -1,5 +1,4 @@
-var countPrev = 0;
-var countNext = 0;
+var counter = 0;
 var images;
 var modalImg;
 var titleText;
@@ -56,7 +55,6 @@ xmlhttp.send(null);
 function disableNext(){
 	setAttribute(nextElem,"class","disabled");
 	setAttribute(nextElem,"onclick","");
-	enableNext();
 }
 function disablePrev(){
 	setAttribute(prevElem,"class","disabled");
@@ -74,7 +72,6 @@ function enableNext(){
 	setAttribute(nextElem,"class","next");
 	setAttribute(nextElem,"onclick","slideNext('next')");
 }
-
 function displayGallery(galleryArray){
 
 	var output='';
@@ -97,78 +94,73 @@ function displayGallery(galleryArray){
 
 		   	var newId = this.id;
 		   	newId = newId.split('-');
-		   	countNext = parseInt(newId[1]);
+		   	counter = parseInt(newId[1]);
 
-		   	var arrayLength = images.length;
-		   	countPrev = arrayLength - 1;
-		   	if(images[arrayLength-2].src != this.src){
-		   		countPrev = parseInt(newId[1]);
-		   	}
+			modal.style.display = "block";
 
-		   		modal.style.display = "block";
+		   	nextElem = document.getElementById("next");
+		   	prevElem = document.getElementById("previous");
 
-		   		nextElem = document.getElementById("next");
-		   		prevElem = document.getElementById("previous");
+			if(document.getElementById("titleTextNew"))
+			   	document.getElementById("titleTextNew").setAttribute("id","titleText");
+			if(document.getElementById("img01New"))
+			   	document.getElementById("img01New").setAttribute("id","img01");
+			if(document.getElementById("captionNew"))
+			   	document.getElementById("captionNew").setAttribute("id","caption");
 
-				if(document.getElementById("titleTextNew"))
-				   	document.getElementById("titleTextNew").setAttribute("id","titleText");
-				if(document.getElementById("img01New"))
-				   	document.getElementById("img01New").setAttribute("id","img01");
-				if(document.getElementById("captionNew"))
-				   	document.getElementById("captionNew").setAttribute("id","caption");
+			if(counter == 0){
+				disablePrev();
+			} else if(counter == images.length-2){
+				disableNext();
+				enablePrev();
+			}else{
+				enableNext();
+				enablePrev();
+			}
 
-				if(images[0].src == this.src){
-					disablePrev();
-				} else if(images[arrayLength-2].src == this.src){
-					disableNext();
-				}else{
-					enableNext();
-					enablePrev();
-				}
-
-				modalImg.setAttribute("class","modal-content");
-				titleText.setAttribute("class","title-content");
-		   		modalImg.src = this.src;
-		   		modalImg.alt = this.alt;
-		   		titleText.innerHTML = this.title;
-		   		descText.innerHTML = this.nextElementSibling.innerHTML;
+			modalImg.setAttribute("class","modal-content");
+			titleText.setAttribute("class","title-content");
+		   	modalImg.src = this.src;
+		   	modalImg.alt = this.alt;
+		   	titleText.innerHTML = this.title;
+		   	descText.innerHTML = this.nextElementSibling.innerHTML;
 		}
 	}
 }
 
 function slidePrev(){
-	
-	var images = document.getElementsByTagName('img');
-	if(images[0].src == images[countPrev].src){
+	images = document.getElementsByTagName('img');
+	counter = counter - 1;
+	if(images[0].src == images[counter].src){
 		disablePrev();
+		setContent();
 	}else{
 		enableNext();
-		if(countPrev > 0){
-			modalImg.src = images[countPrev-1].src;
-			descText.innerHTML = images[countPrev-1].nextElementSibling.innerHTML;
-			titleText.innerHTML = images[countPrev-1].title;
-			countPrev --;
-			countNext = countPrev+1;
+		if(counter >= 0){
+			setContent();
 		}else {
-			countPrev = images.length - 2;
+			counter = images.length - 2;
 		}
 	}
 }
 
 function slideNext(){
-	countNext += 1;
-	var imagesArray = document.getElementsByTagName('img');
-	if(imagesArray[imagesArray.length-1].src == imagesArray[countNext].src){
+	counter += 1;
+	images = document.getElementsByTagName('img');
+	if(counter == images.length-2){
 		disableNext();
+		setContent();
 	}else{
 		enablePrev();
-		if(countNext < imagesArray.length - 1){
-			modalImg.src = imagesArray[countNext].src;
-			descText.innerHTML = imagesArray[countNext].nextElementSibling.innerHTML;
-			titleText.innerHTML = imagesArray[countNext].title;
-			countPrev = countNext+1;
+		if(counter < images.length - 1){
+			setContent();
 		}else {
-			countNext = 0;
+			counter = 0;
 		}
 	}
+}
+function setContent() {
+	modalImg.src = images[counter].src;
+	descText.innerHTML = images[counter].nextElementSibling.innerHTML;
+	titleText.innerHTML = images[counter].title;
 }
