@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
-		<title>Landscapes</title>
+		<title>Demo Page</title>
 		<meta charset="utf-8" />
 		 <!--[if lt IE 9]>
 	  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	  	<![endif]-->
-	  	<link rel="shortcut icon" href="../assets/images/favicon.ico">
 	  	<link rel="stylesheet" href="../assets/css/normalize.css">
 		<link rel="stylesheet" href="../assets/css/styles.css">
 		<script src="../js/script.js"></script>
 	</head>
-	<body id="gallery" onload="displayGallery();">
+	<body id="gallery" onload="updateMe();">
 		<header></header>
 		<nav>
 			<ul class="tabs">
 				<li><a href="../index.html">Home</a></li>
-				<li class="selectedMenu"><a href="views/gallery.html">Gallery</a></li>
-				<li><a href="../views/contact.html">Contact Us</a></li>
+				<li class="selectedMenu"><a href="gallery.html">Gallery</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
 			</ul>
 		</nav>
 		<main>
@@ -29,18 +28,18 @@
 
 				<!-- The Modal -->
 				<div id="myModal" class="modal">
-				  <span onclick="closeModal()" class="close">×</span>
-				  <a href="#" onclick="slidePrev()" class="previous" id="previous"></a>
-				  <div class="slider">
-				  	<div id="titleText" class="title-content"></div>
-				  	<img class="modal-content" id="img01">
-				  	<div id="caption"></div>
-				  </div>
-				  <a href="#" onclick="slideNext()" class="next" id="next"></a>
+				  <span class="close">×</span>
+				  <div id="titleText" class="title-content"></div>
+				  <img class="modal-content" id="img01">
+				  <div id="caption"></div>
 				</div>
 
 				<script>
-
+				var modal = document.getElementById('myModal');
+				var span = document.getElementsByClassName("close")[0];
+				span.onclick = function() { 
+				    modal.style.display = "none";
+				}
 				</script>
 			</article>
 		</main>

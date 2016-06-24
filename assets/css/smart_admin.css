@@ -1,0 +1,367 @@
+/* header height  */
+#header{
+	height:50px;
+}
+/* div.header */
+#header>:first-child{
+	width:100% !important;
+}
+/* logo */
+#QbLogo img{
+	width:100px;
+	padding: 5px;
+}
+/* + icon in menu nav */
+em.fa{
+	padding-top:4px;
+}
+
+/* add button in CRUD pages */
+.addItemIndicator{
+	margin-top:12px!important;
+}
+/* dashboard employee name display */
+.dashboardContainerCredentials{
+	text-align: center;
+	word-wrap: break-word;
+}
+/* dashboard trainer pic */
+.online{
+	height:50px;
+	width:50px;
+}
+/* custom notification styles */
+.swing{
+	color:#fff !important;
+}
+.SmallBox .foto{
+	top:10px;
+}
+.SmallBox .textoFoto{
+	padding-top:12px;
+}
+/* end of custom notification styles */
+
+/* footer button for filter in CRUD pages */
+.formFooter button.btn{
+	height:31px !important;
+	padding:0 22px !important;
+	cursor:pointer !important;
+}
+.formFooter button.btn-primary{
+	color:#fff !important;
+	background-color:#3276b1 !important;
+	border-color:#2c699d !important;
+}
+.formFooter button.btn-primary:hover{
+	background-color:#275b89 !important;
+	border-color:#1f496d !important;
+}
+.formFooter button.btn-default{
+	color:#333 !important;
+	background-color:#fff !important;
+	border-color:#adadad !important;
+}
+.formFooter button.btn-default:hover{
+	background-color:#e6e6e6 !important;
+	border-color:#adadad !important;
+}
+
+/* ajax loader */
+.fa-spin{
+	color:#2C3742;
+}
+/* attributes row in asset definition page */
+.attributesHeading{
+	color:#5598D7;
+	font-size: 15px!important;
+	font-weight:bolder!important;
+}
+/* bootstrap tags */
+.bootstrap-tagsinput .tag{
+	display: inline-block !important;
+}
+/* pagination loader container div */
+#paginationLoader{
+	color:#2C3742;
+	margin-bottom:20px;
+}
+
+/* address book search filter */
+.searchFilterSelect{
+	display: inline!important;
+}
+.searchFilterWell .state-error+em{
+	margin-top:6px;
+	padding:0 1px;
+	font-size: 11px;
+	line-height: :15px;
+	color:#D56161;
+}
+.searchFilterWell .state-error input, .searchFilterWell .state-error select, .searchFilterWell .state-error textarea, .searchFilterWell .toggle.state-error i{
+	background: #fff0f0;
+	border-color: #A90329;
+}
+/* end of address book search filter */
+
+/* dual list box */
+.box1, .box2{
+	width:47%;
+	padding-top:8px;
+	padding-left:15px;
+	padding-right:0px;
+}
+.info span.label{
+	padding-left:10px;
+}
+
+/*  hover on links */
+a:hover,.btn-group i:hover, td i.action:hover{
+	cursor: pointer!important;
+};
+
+/* Settings Company - logo field in modal */
+#logo{
+	width:100% !important;
+	margin:0 !important;
+}
+/* Training topics listing */
+.panel-light{
+	border-color:#EEE !important;
+}
+.panel-light>.panel-heading{
+	border-color:#EEE !important;
+	background: #EEE !important;
+}
+/* employee image in nav bar  */
+.login-info{
+	overflow: hidden !important;
+}
+/*  navigation menu - single item in menu list - hover disabled */
+.minified nav>ul>li:hover>a>.singleMenuItem{
+	display:none!important;
+}
+
+.dailyStatusActivityEmpImg>img{
+	top:0px !important;
+	left:0px !important;
+	width:75px !important;
+	height:75px !important;
+}
+/************************************ common styling *************************************8*/
+.label{
+	font-size: 14px;
+	color:#333; /*#B2C1D5*/;
+}
+.center{
+	text-align:center;
+}
+.padding-top-20{
+	padding-top:20px;
+}
+.smart-form div{
+	margin-bottom: 15px;
+}
+.displayBlock{
+	display: block!important;
+}
+.no-padding-left{
+	padding-left:0px;
+}
+.no-padding-right{
+	padding-right:0px;
+}
+.bg-color-2C3742{
+	background: #2C3742 !important;
+}
+.width100P{
+	width:100%;
+}
+.margin-0{
+	margin: 0px !important;
+}
+
+/***************************** changes while integrating with main.css *********************************/
+
+/* menu items in navigation bar */
+nav>ul>li>ul>li>a, nav>ul>li>ul>li>ul>li>a{
+	padding-top:7px !important;
+	padding-bottom: 7px !important;
+}
+.smart-style-2 nav>ul>li>a{
+	padding-top:16px !important;
+	padding-bottom:16px !important;
+}
+.smart-style-2.minified nav ul>li>a{
+	padding:12px 11px !important;
+}
+.smart-style-2 nav ul ul li>a{
+	padding-left: 23px !important;
+}
+.smart-style-2 nav ul ul ul li a{
+	padding-left: 30px !important;
+}
+nav ul li a{
+	padding:10px 10px 10px 11px !important;
+}
+/* select box in header for search */
+#id_globalSearchOption{
+	height:30px;
+	font-size: 13px;
+	background: #161B22;
+	border:1px solid #161B22;
+	border-radius: 4px!important;
+	color:rgba(255, 255, 255, 0.63);
+}
+#id_globalSearchOption option {
+    background: #fff !important;
+    color:#333;
+    text-shadow:0 1px 0 rgba(0,0,0,0.4);
+}
+.globalSearchDiv{
+	float :left !important;
+	padding-top: 0px !important;
+	position: relative !important;
+}
+#error_globalSearchText{
+	padding : 0 5px;
+	float: left !important;
+	margin-top: 15px !important;
+}
+.header-search .input>button{
+	background:0 0;
+	border:none;
+	color:#404040;
+	font-size: 14px;
+	height:30px;
+	line-height:30px;
+	margin:0;
+	padding:0;
+	position:absolute;
+	right:0;
+	top:-3px;
+	width:20px;
+	z-index:2;
+}
+.header-search .globalSearchDiv>input[type=text]{
+	font-size: 13px;
+	width:auto!important;
+	display: inline!important;
+}
+/* shrtcut div color font texts */
+a.jarvismetro-tile{
+	color:#F7F7F7 !important;
+}
+/*shorcut div items */
+.jarvismetro-tile{
+	padding: 5px !important;
+}
+/* daily status */
+.statusFormDiv{
+	left:45px !important;
+	width:95% !important;
+}
+/* autocomplete fieldset element position css issue */
+.row_data{
+	position: initial !important;
+}
+
+/* error message */
+.noScriptMsg{
+	top:50px !important;
+	width:100% !important;
+}
+
+/* widget icon */
+.widget-icon i{
+	margin-top:10px !important;
+}
+
+h2{
+	color:inherit !important;
+}
+
+.worldClockDashGadget{
+	margin-bottom:10px !important;
+}
+
+table.innerTable thead>tr>th , table.innerTable tbody>tr>td{
+	width:40%;
+}
+
+table.innerTable tbody>tr:last-child>td{
+  border-bottom: 0 !important;
+}
+
+.innerTableColumn{
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd !important; 
+	padding:5px !important;
+}
+
+.dailyStatusHistoryContainer{
+	height: 55px;
+	border-right: 1px solid #ddd;
+	padding-left: 30px !important;
+	text-align: justify;
+}
+.dailyStatusActivityMessageContainer{
+	height: 75px;
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	padding-left: 15px !important;
+	text-align: justify;
+}
+.breakWord {
+	word-wrap: break-word;
+}
+.widget-body.no-padding .alert{
+	width: 98%;
+}
+.border-bottom-0{
+	border-bottom: 0px !important;
+}
+.color-000000{
+	color: #000000;
+}
+.actionIcons{
+	font-size: 1.5em !important;
+}
+.width200P{
+    width: 200% !important;
+}
+.width25px{
+	width: 25px !important;
+}
+.heightAuto{
+	height: auto !important;
+}
+.popover-content{
+	padding:6px;
+	line-height: 20px;
+	color:#A90329;
+}
+.popover{
+	width:75%;
+	text-align: center;
+	position:relative !important;
+}
+#employeeACGlobal ul{
+	left: 10px !important;
+	width: 300px !important;
+}
+.accordionDiv h4{
+	height: auto !important;
+}
+ul.ui-autocomplete li {
+    width: auto !important;
+    white-space: nowrap !important;
+}
+ul.ui-autocomplete{
+    width: auto !important;
+    overflow: auto !important;
+}
+.accordionText{
+   display:block;
+   float:left;
+}

@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Space - Dashboard</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="shortcut icon" href="/favicon1.ico" type="image/x-icon">
+        <link rel="stylesheet" href="assets/css/normalize.css">
+        <link rel="stylesheet" href="assets/css/spaceStyle.css">
+        <link rel="stylesheet" href="assets/css/smartadmin-production.min.css">
+        <link rel="stylesheet" href="assets/css/smartadmin-skins.min.css">
+        <script src="js/space-script.js"></script>
+    </head>
+    <body class="smart-style-2 desktop-detected minified">
+        <header id="header">
+            <div class="header">
+                <div class="floatLeft width100P">
+                    <!-- PLACE YOUR LOGO HERE -->
+                    <span id="QbLogo"> <a href="#" class="noDecoration"><img src="assets/images/logo.png" alt="Space"></a> </span>
+                    <!-- END LOGO PLACEHOLDER -->
+                </div>
+            </div>
+        </header>
+        <div id="main">
+            <div id="transparent" class="transparent"></div>
+            <!-- MAIN CONTENT -->
+            <div id="content">
+                <div id="angularRenderedContent" ui-view="" autoscroll="true">
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8">
+                        <h1 class="page-title txt-color-blueDark">
+                            Daily Status
+                        </h1>
+                    </div>
+                </div>
+                <!-- widget grid -->
+                <section id="widget-grid">
+                <!-- row -->
+                <div class="row">
+                <!-- NEW WIDGET START -->
+                <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="well padding-10">
+                <form method="post">
+                    <div class="row">
+                            <h6 class="page-title color-3276b1">
+                                Bursts
+                            </h6>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <fieldset class="smart-form">
+                                <div class="row">
+                                	<div class="col col-2">
+                                        <label class="label">Date</label>
+                                        <label class="select">
+                                            <select class="input-sm" id="postedFor" name="postedFor" onclick="" required>
+                                            </select>
+                                            <i></i>
+                                        </label>
+                                        <em id="postedForError" class="valid" style="display: none;"></em>
+                                    </div>
+
+                                    <div class="col col-4">
+                                        <label class="label">Project</label>
+                                        <label class="input">
+                                            <input type="text" id="project" name="project" list="projectList" autocomplete="off" required onchange="onFieldChange('project','projectError');">
+                                        </label>
+                                        <em id="projectError" class="valid" style="display: none;"></em>
+                                    </div>
+                                    <datalist id="projectList">
+                                       
+                                    </datalist>
+                                    <div class="col col-2">
+                                        <label class="label">Activity Type</label>
+                                        <label class="select">
+                                            <select class="input-sm" id="activityType" name="activityType" 
+                                            onchange="onFieldChange('activityType','activityTypeError')">
+                                            </select>
+                                            <i></i>
+                                        </label>
+                                        <em id="activityTypeError" class="valid" style="display: none;"></em>
+                                    </div>
+
+                                    <div class="col col-2">
+                                        <label class="label">Time Spent (hours:minutes)</label>
+                                        <div class="col col-6 no-padding">
+                                            <label class="select">
+                                                <select class="input-sm  " id="timeSpent" name="timeSpent" required>
+                                                        <option value="00">00</option>
+                                                        <option value="01">01</option>
+                                                        <option value="02">02</option>
+                                                        <option value="03">03</option>
+                                                        <option value="04">04</option>
+                                                        <option value="05">05</option>
+                                                        <option value="06">06</option>
+                                                        <option value="07">07</option>
+                                                        <option value="08" selected>08</option>
+                                                        <option value="09">09</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+                                                        <option value="16">16</option>
+                                                </select> <i></i>
+                                            </label>
+                                            <em id="timeSpentError" class="valid width200P" style="display: none;"></em>
+                                        </div>
+                                        <div class="col col-6 no-padding">
+                                            <label class="select">
+                                                <select class="input-sm  " id="timeSpent_1" name="timeSpent_1">
+                                                        <option value="00">00</option>
+                                                        <option value="15">15</option>
+                                                        <option value="30">30</option>
+                                                        <option value="45">45</option>
+                                                </select> <i></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-6">
+                                        <label class="label">Activity Description</label>
+                                        <label class="textarea"> 
+                                            <textarea rows="5" name="message" id="message" maxlength="180" placeholder="Use T# or t# in your description to indicate Redmine ticket/task. For example : T#1234" class=" " onchange="onFieldChange('message','messageError')"></textarea>
+                                        </label>
+                                        <em id="messageError" class="valid" style="display: none;"></em>
+                                    </div>
+                                    <div class="col col-6">
+                                        <p class="padding-top-10 margin-top-10">Enter the actual number of hours against each of your project(s). If you're working on multiple projects, submit separate entry for each project. <br>
+                                        If you're not assigned to a project, select the option "N/A" from Project drop down. <br>
+                                        You should book the time against a project if you are contributing your effort, whether you are allocated or not. If you have been working on the project regularly, ask the PM to formally allocate you. <br>
+                                        Please make sure you're not booking time for organizational (non project) activities like pre-sales, trainings, your non project related self learning activity to any project.</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-6"></div>
+                                    <div class="col col-6">
+                                        <p class="padding-top-10 margin-top-10">
+                                            Also, if you are learning something, mention the platform name too.(Java, iPhone etc).<br>
+                                            Directions: <br><br>
+                                            <span><strong><i class="fa fa-asterisk"></i></strong> Do not include lunch time and long breaks greater than 15 minutes.</span>
+                                            <br>
+                                            <span><strong><i class="fa fa-asterisk"></i></strong> You are expected to put in 8 hours a day.</span>
+                                            <br>
+                                            <span><strong><i class="fa fa-asterisk"></i></strong> However report actual hours worked whether it is lesser or greater than 8 hours.</span>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                       <div class="center formFooter">
+                                <button type="button" class="btn btn-primary" id="saveDailyStatusButton" onclick="saveDailyStatus();">
+                                    Save
+                                </button>
+                            </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8">
+                    <h6 class="page-title color-3276b1">My History</h6>
+                </div>
+            </div>
+
+            
+            <div class="well padding-10 animated fadeInUp fadeInBottom ng-hide" data-animate="fadeInUp" ng-show="dailyStatusStateVariables.noHistoryContentToShow">
+                <form class="smart-form  ">
+                    <div class="row padding-top-10">
+                        <p class="center"><strong>No daily status history available</strong></p>
+                    </div>
+                </form>
+            </div>
+
+            <div id="paginationLoader" class="text-center">
+                <div class="router-animation-loader center" id="paginationDataLoading" style="display:none;"><i class="fa fa-gear fa-3x fa-spin"></i>
+                    <p class="text-center">Loading more items...</p>
+                </div>
+                <div class="center" id="paginationDataLoaded" style="display:none;"><i class="fa fa-info-circle fa-3x"></i>
+                    <p class="text-center ng-binding">Loaded  items</p>
+                </div>
+                <div class="center" id="paginationNoMoreData" style="display:none;"><i class="fa fa-warning fa-3x"></i>
+                    <p class="text-center">No More Data</p>
+                </div>
+            </div>
+
+        </article>
+    </div>
+</section>
+
+</div></div></div>
+                
+                <div id="djangoRenderedContent" style="display: none;"></div>
+            </div>
+
+            <!-- END MAIN CONTENT -->
+
+        </div>
+
+                <footer>
+            <p>&copy;All rights reserved</p>
+            <p>For further information, contact: <a href="mailto:example@domain.com">example@domain.com</a></p>
+        </footer>
+    </body>
+</html>

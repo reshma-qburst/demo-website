@@ -1,0 +1,30 @@
+[
+        {
+            "id": "",
+            "value": "Select"
+        },
+        {
+            "id": "0",
+            "value": "Project management"
+        },
+        {
+            "id": "1",
+            "value": "Training"
+        },
+        {
+            "id": "2",
+            "value": "Architecting"
+        },
+        {
+            "id": "3",
+            "value": "Requirements analysis"
+        },
+        {
+            "id": "4",
+            "value": "System design"
+        },
+        {
+            "id": "5",
+            "value": "Coding"
+        }
+]
