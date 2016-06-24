@@ -170,48 +170,9 @@
                 <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8">
                     <h6 class="page-title color-3276b1">My History</h6>
                 </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4">
-	                <fieldset class="smart-form">
-			            <div class="col col-3 pull-right no-padding">
-			                <label class="select">
-			                    <select name="show" id="show" ng-model="searchBy.show" ng-options="status.key as status.val for status in projectStatusList" ng-init="searchBy.show=''" class=" "><option value="" class="">All</option></select> <i></i>
-			                </label>
-			            </div>
-        			<fieldset>
-                </fieldset></fieldset></div>
             </div>
 
-            <div class="router-animation-loader center padding-top-20 ng-hide"><i class="fa fa-gear fa-4x fa-spin"></i></div>
-
-            <!-- ngRepeat: history in dailyStatusContent.history --><div class="well padding-10 animated fadeInUp fadeInBottom " data-animate="fadeInUp">
-                <form class="smart-form  ">
-                    <div class="row padding-top-10 breakWord">
-                        <div class="col col-2 dailyStatusHistoryContainer">
-                            <span class="ng-binding">end-of-day</span><br>
-                            <span class="ng-binding">22/06/2016</span><br><br>
-                            <span><small id="postedOn">Posted on: 23/06/2016 </small></span><br>
-                            <span><small id="postedTime">09:14:49</small><span>
-                        </span></span></div>
-
-                        <div class="col col-8 dailyStatusHistoryContainer">
-                           <span>
-                                <strong class="ng-binding">* Learning HTML5 &amp; CSS3 - Working on demo site - Gallery page image slider</strong>
-                            </span>
-                           <br>
-                        </div>
-
-                        <div class="col col-2">
-                            <span>8:00 hour(s)</span><br>
-                            <span>Coding</span><br><br>
-                            <span><!-- ngIf: history.project!='N/A' --></span>
-                            <!-- ngIf: history.project =='N/A' --><span ng-if="history.project =='N/A'" class=" ng-binding">N/A</span><!-- end ngIf: history.project =='N/A' -->
-                            <br>
-                        </div>
-
-                    </div>
-                </form>
-            </div>
-            </div><!-- end ngRepeat: history in dailyStatusContent.history -->
+            
             <div class="well padding-10 animated fadeInUp fadeInBottom ng-hide" data-animate="fadeInUp" ng-show="dailyStatusStateVariables.noHistoryContentToShow">
                 <form class="smart-form  ">
                     <div class="row padding-top-10">
