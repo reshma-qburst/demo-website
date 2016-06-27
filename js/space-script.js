@@ -101,7 +101,7 @@ function saveDailyStatus(){
 	var e4 = document.getElementById("timeSpent");
 	var e5 = document.getElementById("timeSpent_1");
 	
-	if(e.options[e.selectedIndex].text != 'Select'){
+	if(e.options[e.selectedIndex].text != 'Select' && e3.value != ''){
 		fields.push(e.options[e.selectedIndex].text);
 		fields.push(e1.value);
 		fields.push(e2.options[e2.selectedIndex].text);
