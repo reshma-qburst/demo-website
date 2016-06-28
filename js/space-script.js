@@ -1,7 +1,7 @@
 var dateToday;
 var today = new Date; // get current date
 var fields = [];
-var outputHistory;
+var outputHistory='';
 var previousValue;
 var previousMinTime = '00';
 window.onload = function() {
