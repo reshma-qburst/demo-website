@@ -1,7 +1,7 @@
 var dateToday;
 var today = new Date; // get current date
 var fields = [];
-var outputHistory='';
+var outputHistory;
 var previousValue;
 var previousMinTime = '00';
 window.onload = function() {
@@ -150,12 +150,7 @@ function calculateTime(eMin,selectedTimeMin,date,selectedTimeSec,eSec,eDateIndex
 	}else if(selectedTimeMin < 8) {
 		setTime(selectedTimeSec,selectedTimeMin);
 	}else if(selectedTimeMin==8){
-		if(eDateIndex!=7){
-			setTextToFind('8','00');
-			eDate.selectedIndex = eDateIndex+1;
-		}else{
-			setTextToFind('0','00');
-		}
+		dateAndTimeForToday(eDateIndex,eDate);
 	}
 	previousMinTime = "0"+textToFindMin;
 	for (var i = 0; i < eMin.options.length; i++) {
@@ -198,7 +193,15 @@ function setDateAndTime(selectedTimeSec,selectedTimeMin,eDate,eDateIndex){
 	}else if(selectedTimeSec == '45' && previousMinTime!=selectedTimeMin){
 		setTextToFind((previousMinTime-selectedTimeMin)-1,'15');
 	}else{
+		dateAndTimeForToday(eDateIndex,eDate);
+	}
+}
+
+function dateAndTimeForToday(eDateIndex,eDate){
+	if(eDateIndex!=7){
 		setTextToFind('8','00');
 		eDate.selectedIndex = eDateIndex+1;
+	}else{
+		setTextToFind('0','00');
 	}
 }
