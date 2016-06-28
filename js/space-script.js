@@ -3,6 +3,7 @@ var today = new Date; // get current date
 var fields = [];
 var outputHistory='';
 var previousValue;
+var previousMinTime = '00';
 window.onload = function() {
   loadProjectOptions();
   loadActivityTypes();
@@ -108,11 +109,8 @@ function saveDailyStatus(){
 		fields.push(e3.value);
 		fields.push(e4.options[e4.selectedIndex].text+":"+e5.options[e5.selectedIndex].text);
 
-		if(e2.options[e2.selectedIndex].text != null){
-			calculateDate(fields,e2.options[e2.selectedIndex].text,e2.selectedIndex,e2,e4.options[e4.selectedIndex].text);
-		}
 		if(e4.options[e4.selectedIndex].text != null){
-			calculateTime(e4,e4.options[e4.selectedIndex].text,e2.options[e2.selectedIndex].text,fields);
+			calculateTime(e4,e4.options[e4.selectedIndex].text,e2.options[e2.selectedIndex].text,e5.options[e5.selectedIndex].text,e5,e2.selectedIndex,e2);
 		}
 
 		outputHistory = "";
@@ -143,26 +141,64 @@ function showNoHistory(){
 		document.getElementById("nohistory").innerHTML = outputHistory;
 	}
 }
-function calculateTime(e,selectedTime,date,arrayHistory){
-	var textToFind;
-	if(previousValue == date && selectedTime<8){
-		textToFind = 0;
-	}else if(selectedTime < 8) {
-		textToFind = 8-selectedTime;
+
+var textToFindMin;
+var textToFindSec;
+function calculateTime(eMin,selectedTimeMin,date,selectedTimeSec,eSec,eDateIndex,eDate){
+	if(previousValue == date && selectedTimeMin<8){
+		setDateAndTime(selectedTimeSec,selectedTimeMin,eDate,eDateIndex);
+	}else if(selectedTimeMin < 8) {
+		setTime(selectedTimeSec,selectedTimeMin);
+	}else if(selectedTimeMin==8){
+		if(eDateIndex!=7){
+			setTextToFind('8','00');
+			eDate.selectedIndex = eDateIndex+1;
+		}else{
+			setTextToFind('0','00');
+		}
 	}
-	for (var i = 0; i < e.options.length; i++) {
-	    if (e.options[i].text === "0"+textToFind) {
-	        e.selectedIndex = i;
+	previousMinTime = "0"+textToFindMin;
+	for (var i = 0; i < eMin.options.length; i++) {
+	    if (eMin.options[i].text === "0"+textToFindMin) {
+	        eMin.selectedIndex = i;
+	        break;
+	    }
+	}
+	for (var j = 0; j < eSec.options.length; j++) {
+	    if (eSec.options[j].text === textToFindSec) {
+	        eSec.selectedIndex = j;
 	        break;
 	    }
 	}
 }
-function calculateDate(arrayHistory,selectedDate,index,e,time){
-	if(index == 7 || index == 7 && time <8){
-		e.selectedIndex = index;
-	}else if(time<8){
-		e.selectedIndex = index;
+
+function setTextToFind(min,sec){
+	textToFindMin = min;
+	textToFindSec = sec;
+	document.getElementById("message").value = "";
+}
+
+function setTime(selectedTimeSec,selectedTimeMin){
+	if(selectedTimeSec == '15'){
+		setTextToFind((8-selectedTimeMin)-1,'45');
+	}else if(selectedTimeSec == '30'){
+		setTextToFind((8-selectedTimeMin)-1,'30');
+	}else if(selectedTimeSec == '45'){
+		setTextToFind((8-selectedTimeMin)-1,'15');
 	}else{
-		e.selectedIndex = index+1;
+		setTextToFind(8-selectedTimeMin,'00');
+	}
+}
+
+function setDateAndTime(selectedTimeSec,selectedTimeMin,eDate,eDateIndex){
+	if(selectedTimeSec == '15' && previousMinTime!=selectedTimeMin){
+		setTextToFind((previousMinTime-selectedTimeMin)-1,'45');
+	}else if(selectedTimeSec == '30' && previousMinTime!=selectedTimeMin){
+		setTextToFind((previousMinTime-selectedTimeMin)-1,'30');
+	}else if(selectedTimeSec == '45' && previousMinTime!=selectedTimeMin){
+		setTextToFind((previousMinTime-selectedTimeMin)-1,'15');
+	}else{
+		setTextToFind('8','00');
+		eDate.selectedIndex = eDateIndex+1;
 	}
 }
