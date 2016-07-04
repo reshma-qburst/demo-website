@@ -1,5 +1,5 @@
 var dateToday;
-var today = new Date; // get current date
+var today;
 var fields = [];
 var outputHistory='';
 var previousValue;
@@ -49,10 +49,11 @@ function loadActivityTypes(activityList){
 
 function showDate() {
 	var datesArray = [];
-	var first = today.getDate();
-	dateToday = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+	dateToday = new Date().getDate()+'/'+(new Date().getMonth()+1)+'/'+new Date().getFullYear();
 	var outputDate='';
 	for(var i=0; i<8; i++){		
+		today = new Date();
+		var first = today.getDate();
 		var day = new Date(today.setDate(first-i));
 		datesArray.push(day.getDate()+'/'+(day.getMonth()+1)+'/'+day.getFullYear());
 	}
